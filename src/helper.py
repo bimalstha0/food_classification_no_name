@@ -8,7 +8,7 @@ from tensorflow.keras.preprocessing.image import img_to_array, load_img, array_t
 
 model_mobile_net = load_model("models/best_mobile_net_v2.keras")
 labels = []
-with open("data/meta/labels.txt", "r") as grilled_cheese:
+with open("meta/labels.txt", "r") as grilled_cheese:
     lines = grilled_cheese.readlines()
     for l in lines:
         labels.append(l)
