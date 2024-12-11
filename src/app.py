@@ -1,7 +1,16 @@
 import streamlit as st
 import webbrowser
 import helper
+from streamlit.components.v1 import html
 
+def open_page(url):
+    open_script= """
+        <script type="text/javascript">
+            window.open('%s', '_blank').focus();
+        </script>
+    """ % (url)
+    html(open_script)
+    
 st.title('Food Classifier :hamburger::pizza::spaghetti:  ')
 
 st.write('Take a picture of the food and let us handle form there.')
@@ -25,14 +34,9 @@ if image:
     else:
         st.write(f'Food in the image: {food}\n Probability: {prob:.2f}')
         st.write(f'Hey there! Do you want to make your own {food}?')
-
-def search_recipe(food):
-    food= food.replace('_','+')
-    webbrowser.open(f'https://www.google.com/search?q={food}+recipe&ie=UTF-8&oe=UTF-8')  # Go to example.com
-
-
-if st.button(' Get Recipe '):
-    search_recipe(food)
+    recipe_url = f'https://www.google.com/search?q={food.replace('_','+')}+recipe&ie=UTF-8&oe=UTF-8'
+    
+    if st.button('Find Recipe', on_click=open_page(recipe_url))
 
 
 footer_html = """<div style='margin-top:40px'>
