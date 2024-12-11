@@ -38,6 +38,13 @@ if image:
     
     st.button('Find Recipe', on_click=open_page(recipe_url))
 
+# Add a button
+if st.button('Open Link'):
+    # Use markdown to create a clickable link
+    st.markdown(
+        '<a href="https://example.com" target="_blank" style="text-decoration: none; color: white; background-color: #4CAF50; padding: 10px 20px; border-radius: 5px;">Go to Example</a>',
+        unsafe_allow_html=True
+    )
 
 footer_html = """<div style='margin-top:40px'>
   <p>Developed with ❤️ ❤️ by Team NoName.</p>
