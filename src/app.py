@@ -36,7 +36,7 @@ if image:
         st.write(f'Hey there! Do you want to make your own {food}?')
     recipe_url = f'https://www.google.com/search?q={food.replace('_','+')}+recipe&ie=UTF-8&oe=UTF-8'
     
-    if st.button('Find Recipe', on_click=open_page(recipe_url))
+    st.button('Find Recipe', on_click=open_page(recipe_url))
 
 
 footer_html = """<div style='margin-top:40px'>
