@@ -1,4 +1,4 @@
-# Welcome to food_classification_no_name
+# FOOD CLASSIFICAITON
 
 This project is designed to tackle this challenge by using Convolutional Neural Networks (CNNs) to classify food images accurately. With the help of the Food-101 dataset, which features over 101,000 images across 101 categories, we aim to build a model that doesn’t just identify food but does so with high precision.
 
