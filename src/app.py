@@ -1,15 +1,6 @@
 import streamlit as st
 import webbrowser
 import helper
-from streamlit.components.v1 import html
-
-def open_page(url):
-    open_script= """
-        <script type="text/javascript">
-            window.open('%s', '_blank').focus();
-        </script>
-    """ % (url)
-    html(open_script)
     
 st.title('Food Classifier :hamburger::pizza::spaghetti:  ')
 
@@ -35,10 +26,8 @@ if image:
         st.write(f'Food in the image: {food}\n Probability: {prob:.2f}')
         st.write(f'Hey there! Do you want to make your own {food}?')
     recipe_url = f'https://www.google.com/search?q={food.replace('_','+')}+recipe&ie=UTF-8&oe=UTF-8'
-    
-    st.button('Find Recipe', on_click=open_page(recipe_url))
     st.markdown(
-        f'<a href="{recipe_url}" target="_blank" style="text-decoration: none; color: white; background-color: #4CAF50; padding: 10px 20px; border-radius: 5px;">Go to Example</a>',
+        f'<a href="{recipe_url}" target="_blank" style="text-decoration: none; color: white; background-color: #4CAF50; padding: 10px 20px; border-radius: 5px;">Get Recipe for {food}</a>',
         unsafe_allow_html=True
     )
 
