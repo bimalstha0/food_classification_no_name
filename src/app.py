@@ -56,3 +56,4 @@ footer_html = """<div style='margin-top:40px'>
   <p>Developed with ❤️ ❤️ by Team NoName.</p>
 </div>"""
 st.markdown(footer_html, unsafe_allow_html=True)
+
